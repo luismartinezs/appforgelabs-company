@@ -10,3 +10,11 @@ Agents live in `.claude/agents/`. Tasks live in `/tasks/`. Output is Markdown in
 - Create tasks
 - Create cronjobs for async tasks
 - Update revenue.md
+
+## Claude
+
+Bypass all permissions:
+
+```sh
+claude -p "message" --dangerously-skip-permissions
+```
