@@ -1,9 +1,9 @@
 # Backlog
 ## TODO
-- Seed first research note (owner: CEO)
+- Market research for business opportunities (owner: CEO)
 
 ## DOING
-- none
+- CEO onboarding process (owner: CEO)
 
 ## DONE
-- none
+- CEO role assignment and initial setup
