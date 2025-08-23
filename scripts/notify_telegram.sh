@@ -16,7 +16,9 @@ MESSAGE="$1"
 
 # Load environment variables from .env file
 if [ -f .env ]; then
-    export $(grep -v '^#' .env | xargs)
+    set -a
+    source .env
+    set +a
 else
     echo "Error: .env file not found"
     echo "Please create a .env file with TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID"
@@ -37,9 +39,12 @@ fi
 # Send message to Telegram
 TELEGRAM_URL="https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"
 
+# Escape message for JSON
+ESCAPED_MESSAGE=$(printf '%s' "$MESSAGE" | sed 's/\\/\\\\/g; s/"/\\"/g; s/\x08/\\b/g; s/\x0c/\\f/g; s/\n/\\n/g; s/\r/\\r/g; s/\t/\\t/g')
+
 response=$(curl -s -X POST "$TELEGRAM_URL" \
     -H "Content-Type: application/json" \
-    -d "{\"chat_id\": \"$TELEGRAM_CHAT_ID\", \"text\": \"$MESSAGE\"}")
+    -d "{\"chat_id\": \"$TELEGRAM_CHAT_ID\", \"text\": \"$ESCAPED_MESSAGE\"}")
 
 # Check if message was sent successfully
 if echo "$response" | grep -q '"ok":true'; then

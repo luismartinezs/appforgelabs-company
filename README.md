@@ -8,5 +8,5 @@ Agents live in `.claude/agents/`. Tasks live in `/tasks/`. Output is Markdown in
 ## Human API
 
 - Create tasks
-- Create cronjobs for tasks
+- Create cronjobs for async tasks
 - Update revenue.md

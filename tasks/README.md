@@ -12,4 +12,4 @@ Task template:
 ## Constraints
 <time/cost/scope limits, if any>
 
-Example of task invocation: `claude -p "The atlas-ceo subagent should handle task ./tasks/ceo-sample.md" >> logs/conversation.log 2>&1`
+Example of task invocation: `claude -p "The atlas-ceo subagent should handle task ./tasks/ceo-sample.md" >> logs/conversation.md 2>&1`
