@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Write(./**)",
+      "Edit(./**)",
+      "Glob(./**)",
+      "MultiEdit(./**)",
+      "WebSearch",
+      "WebFetch",
+      "Bash(git:*)",
+      "Bash(date)",
+      "Bash(./scripts/notify_telegram.sh:*)",
+      "Bash(git:*)",
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./config/credentials.json)",
+      "Read(./config/api_keys.json)",
+      "Read(./build)"
+    ],
+    "ask": []
+  }
+}

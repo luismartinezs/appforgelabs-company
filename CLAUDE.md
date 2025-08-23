@@ -1,0 +1,4 @@
+- Primary objective defined in ./GOAL.md
+- Prefer incremental edits. Keep diffs small.
+- Do not read `.env` or secrets. Do not paste tokens into logs.
+- Revenue file `/ops/revenue.md` is **owner: Luis**; request updates via Telegram.
